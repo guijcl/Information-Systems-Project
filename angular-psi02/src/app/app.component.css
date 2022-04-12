@@ -1,0 +1,16 @@
+.header {
+  padding: 30px;
+  position: center;
+  text-align: center;
+  background: white;
+
+}
+
+body{
+  padding: 30px;
+  text-align: center;
+}
+
+h1{
+  color: #3d3d3d;
+}

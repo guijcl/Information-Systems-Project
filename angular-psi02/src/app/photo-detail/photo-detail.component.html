@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+	<body style="margin: 0;">
+		<div class="topnav">
+			<a class= "anchor-style" routerLink="/dashboard">Main Page</a>
+		</div>
+
+		<div *ngIf="photo">
+			<div class="photo">
+				<div class= "name">
+					{{photo.photo_name}}
+				</div>
+				<div>
+					<img [src]="photo._photo" height="200"/>
+				</div>
+				
+				<div class= "description">
+					{{photo.photo_desc}}
+				</div>
+				<div *ngIf= "logdin">
+					<div class="logdin" >
+					<div class= "like_css">
+						<div *ngIf= "liked; else elseB">
+							<button class="unlike" (click)="unlike()">Unlike</button>
+						</div>
+						<ng-template #elseB>
+							<button class="like" (click)="like()">Like</button>
+						</ng-template>
+					</div>
+					<div class= "favorite">
+						<div *ngIf= "favr; else elseBlock">
+							<button class="unfav" (click)="unfav()">Unfavorite</button>
+						</div>
+						<ng-template #elseBlock>
+							<button class="fav" (click)="fav()">Favorite</button>
+						</ng-template>
+					</div>
+						<div *ngIf="mine">
+							<button class="remove" (click)="remove()">Delete</button>
+						</div>
+					</div>
+				</div>
+				<div class= "share">
+			<button class="share2"(click)="copyMessage(href)" value="click to copy" >Share</button>
+		</div>
+			</div>
+
+		</div>
+		
+	</body>
+</html>

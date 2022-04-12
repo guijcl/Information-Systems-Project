@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+	<body>
+		<div class="topnav" >
+			<a class="box" *ngIf="logged; else elseBlock">
+				<a *ngIf="user">
+					
+				<button class="logout" (click)="logout()">Logout</button>
+				</a>
+				<button class="profile" routerLink="/detail_user/{{user._id}}">Profile</button>
+				</a>
+			<ng-template #elseBlock>
+				<a>
+				<button class= "requirements" (click)="requirements()">Requirements</button>
+				</a>
+				<a class="name">
+					<label for="user-name">
+						User name: <input class="namebox" id="user-name" [(ngModel)]="temp_name" placeholder="ex. Ricardo"/>
+					</label>
+				</a>
+				<a class="password">
+					<label for="user-pass">
+						Password: <input [(ngModel)]="temp_pass" id="user-pass"/> 
+					</label>
+				</a>
+				<a>
+					<button class="add-button1" (click)="login()">Login</button>
+					<button class="add-button2" (click)="register()">Register</button>
+				</a>
+			</ng-template>
+		</div>
+	</body>
+</html>
+

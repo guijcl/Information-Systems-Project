@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body style="margin: 0;">
+	<div class="topnav">
+	  <a >
+	  	<button class="buttonRecent" (click)="changeView(options[0])">Recent</button>
+	  </a>
+	  <a>
+	  	<button class="buttonPopular" (click)="changeView(options[1])">Popular</button>
+	  </a>
+
+	  <div class="loginbox" style="float:right">
+	  	<app-users class="login"></app-users>
+	  </div>  
+	</div>
+
+		<div class="row">
+			<div class="leftcolumn">
+				<div class = "photo">
+					<a *ngFor="let photo of requested_photos"
+						routerLink="/detail_photo/{{photo._id}}">
+						<a class="boxName">{{photo.photo_name}}</a><br>
+						<img class= "innerPhoto" [src]="photo._photo" style="height:200px;"/>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
